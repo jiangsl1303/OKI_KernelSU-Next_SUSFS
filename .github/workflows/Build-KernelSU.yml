@@ -1,4 +1,4 @@
-name: Build KernelSU Next
+name: Build KernelSU
 on:
   workflow_dispatch:
     inputs:
@@ -28,8 +28,8 @@ jobs:
 
      - name: Configure Git
        run: |
-        git config --global user.name "wuua"
-        git config --global user.email "3436678798@qq.com"
+        git config --global user.name "mcxiaochenn"
+        git config --global user.email "mcxiaochenn.yyds@gmail.com"
 
      - name: Clean up disk space
        run: |
@@ -82,12 +82,12 @@ jobs:
      - name: Upload AnyKernel3
        uses: actions/upload-artifact@v4
        with:
-        name: AnyKernel3_KernelSU_Next_${{ env.KSUVER }}_${{ github.event.inputs.FEIL }}
+        name: AnyKernel3_KernelSU_${{ env.KSUVER }}_${{ github.event.inputs.FEIL }}
         path: ./AnyKernel3/*
 
      - name: Upload boot.img
        uses: actions/upload-artifact@v4
        with:
-        name: boot_KernelSU_Next_${{ env.KSUVER }}_${{ github.event.inputs.FEIL }}
+        name: boot_KernelSU_${{ env.KSUVER }}_${{ github.event.inputs.FEIL }}
         path: kernel_workspace/kernel_platform/out/msm-kernel-${{ github.event.inputs.CPUD }}-gki/dist/boot.img
 
